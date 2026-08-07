@@ -13,6 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && cp -r ghidra/ghidra_*_PUBLIC /app \
  && unzip ghidrassistmcp.zip -d /app/Ghidra/Extensions/ \
  && mkdir /work \
+ && chown ubuntu:ubuntu /work \
  && apt-get autoremove --purge -y unzip curl \
  && rm -rf /var/lib/apt/lists/*
 
