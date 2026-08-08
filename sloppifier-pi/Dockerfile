@@ -12,7 +12,7 @@ RUN npm install -g --ignore-scripts @earendil-works/pi-coding-agent
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && apt-get install -y --no-install-recommends make python3 python-is-python3 build-essential \
  && npm install -g --allow-scripts=node-pty @jmfederico/pi-web \
- && apt-get autoremove --purge -y make python build-essential \
+ && apt-get autoremove --purge -y make python3 python-is-python3 build-essential \
  && rm -rf /var/lib/apt/lists/*
 
 # Setup entrypoint and pre-baked MCP configuration file
