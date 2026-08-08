@@ -1,0 +1,14 @@
+[Unit]
+Description=Ghidra MCP worker
+
+[Container]
+Image=ghcr.io/project-muteki/sloppifier-worker-ghidra:master
+Environment=PROJECT=<project name>
+Environment=BIN=<binary name>
+Environment=OWNER=<owner name>
+Pod=sloppifier.pod
+Volume=ghidra-user-data.volume:/home/ubuntu
+Volume=ghidra-projects.volume:/work
+
+[Install]
+WantedBy=network-online.target default.target

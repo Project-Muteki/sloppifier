@@ -1,0 +1,8 @@
+[Unit]
+Description=Ghidra projects volume
+
+[Volume]
+VolumeName=ghidra-projects
+
+[Install]
+WantedBy=default.target

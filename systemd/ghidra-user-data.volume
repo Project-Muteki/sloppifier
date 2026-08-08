@@ -1,0 +1,5 @@
+[Unit]
+Description=Ghidra user data volume
+
+[Install]
+WantedBy=default.target

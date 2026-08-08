@@ -1,0 +1,11 @@
+[Unit]
+Description=Pi agent
+
+[Container]
+Image=ghcr.io/project-muteki/sloppifier-pi:master
+Pod=sloppifier.pod
+Volume=pi-user-data.volume:/home/node
+Volume=pi-workspace.volume:/workspace
+
+[Install]
+WantedBy=network-online.target default.target
