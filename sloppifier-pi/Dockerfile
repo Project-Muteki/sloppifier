@@ -1,17 +1,20 @@
 FROM docker.io/library/node:26-slim
 
+ARG PI_VERSION="0.84.2"
+ARG PI_WEB_VERSION="1.202608.1"
+
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && apt-get install -y --no-install-recommends bash ca-certificates git ripgrep \
  && rm -rf /var/lib/apt/lists/* \
  && mkdir -p /workspace \
  && chown node:node /workspace
 
-RUN npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+RUN npm install -g --ignore-scripts "@earendil-works/pi-coding-agent@${PI_VERSION}"
 
 # node-pty has a native extension that needs to be built, therefore we also need to install Python for node-gyp, and the C toolchain.
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && apt-get install -y --no-install-recommends make python3 python-is-python3 build-essential \
- && npm install -g --allow-scripts=node-pty @jmfederico/pi-web \
+ && npm install -g --allow-scripts=node-pty "@jmfederico/pi-web@${PI_WEB_VERSION}" \
  && apt-get autoremove --purge -y make python3 python-is-python3 build-essential \
  && rm -rf /var/lib/apt/lists/*
 
