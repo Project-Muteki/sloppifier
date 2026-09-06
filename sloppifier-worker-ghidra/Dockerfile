@@ -1,6 +1,6 @@
 FROM docker.io/library/eclipse-temurin:25
 
-ARG GHIDRA_RELEASE='https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.2_build/ghidra_12.1.2_PUBLIC_20260605.zip'
+ARG GHIDRA_RELEASE='https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.3_build/ghidra_12.1.3_PUBLIC_20260817.zip'
 ARG GHIDRASSISTMCP_RELEASE='https://github.com/symgraph/GhidrAssistMCP/releases/download/2.11.0/ghidra_12.1_PUBLIC_20260802_GhidrAssistMCP.zip'
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
