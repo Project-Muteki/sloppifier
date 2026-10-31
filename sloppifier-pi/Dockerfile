@@ -1,7 +1,7 @@
 FROM docker.io/library/node:26-slim
 
-ARG PI_VERSION="0.85.1"
-ARG PI_WEB_VERSION="1.202609.0"
+ARG PI_VERSION="1.4.0"
+ARG PI_WEB_VERSION="1.202610.9"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
  && apt-get install -y --no-install-recommends bash ca-certificates git ripgrep \
